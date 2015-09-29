@@ -3,9 +3,9 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/golang/glog"
+	//"github.com/golang/glog"
 
-	"html/template"
+	//"html/template"
 
 	//"github.com/prashanthrv/goji-handlebars/helpers"
 	//"github.com/haruyama/golang-goji-sample/models"
