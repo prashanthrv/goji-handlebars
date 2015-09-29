@@ -13,7 +13,7 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/gorilla/sessions"
-	"github.com/haruyama/golang-goji-sample/models"
+	//"github.com/haruyama/golang-goji-sample/models"
 	"github.com/pelletier/go-toml"
 	"github.com/zenazn/goji/web"
 	"gopkg.in/gorp.v1"
