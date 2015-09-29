@@ -3,12 +3,12 @@ package main
 import (
 	"flag"
 	"net/http"
-	"fmt"
+	//"fmt"
 	
 	"github.com/golang/glog"
 	//"github.com/gorilla/context"
 
-	"github.com/prashanthrv/goji-handlebars/controllers"
+	"./controllers"
 	"github.com/prashanthrv/goji-handlebars/system"
 
 	"github.com/zenazn/goji"
@@ -30,7 +30,7 @@ func main() {
 	static.Get("/assets/*",http.StripPrefix("/assets/", http.FileServer(http.Dir(publicPath))))
 	http.Handle("/assets/",static)
 	controller := &controllers.MainController{}
-	
+
 	goji.Get("/", application.Route(controller, "Index"))
 	
 	goji.Serve()
