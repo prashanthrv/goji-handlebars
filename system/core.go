@@ -49,13 +49,6 @@ func (application *Application) Init(filename *string) {
 		HttpOnly: true,
 		Secure:   config.Get("cookie.secure").(bool),
 	}
-	dbConfig := config.Get("database").(*toml.TomlTree)
-	application.DbMap = models.GetDbMap(
-		dbConfig.Get("user").(string),
-		dbConfig.Get("password").(string),
-		dbConfig.Get("hostname").(string),
-		dbConfig.Get("port").(string),
-		dbConfig.Get("database").(string))
 
 	application.CsrfProtection = &CsrfProtection{
 		Key:    config.Get("csrf.key").(string),

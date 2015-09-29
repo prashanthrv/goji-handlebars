@@ -26,6 +26,9 @@ func main() {
 	flag.Parse()
 	defer glog.Flush()
 
+	var application = &system.Application{}
+	application.Init(filename)
+	
 	static := web.New()
 	publicPath := application.Config.Get("general.public_path").(string)
 	static.Get("/assets/*",http.StripPrefix("/assets/", http.FileServer(http.Dir(publicPath))))
